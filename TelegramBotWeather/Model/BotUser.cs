@@ -10,6 +10,8 @@ namespace TelegramBotWeather.Model
 {
     public class BotUser: IStatefulUser
     {
+         internal List<GeoCoderInfo> Favs { get; } = new();
+
         public IUserState State { get; set; }
         public long TelegramId { get; set; }
 
@@ -22,3 +24,4 @@ namespace TelegramBotWeather.Model
         public void ResetState() => State = new DefaultUserState();
     }
 }
+
